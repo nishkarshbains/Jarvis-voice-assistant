@@ -1,0 +1,462 @@
+'''modules required are playsound,gtts,time,random,webbrowser,wikipedia,datetime,speech_recognition as sr'''
+# MAJOR PROJECT
+# VOICE ASSISTANT JARVIS
+from playsound import playsound
+from gtts import gTTS
+import time
+localtime = time.asctime(time.localtime(time.time()))
+def playaudio(audio):
+  playsound(audio)
+
+def speak(text):
+    audio = gTTS(text)
+    audio.save("textaudio.mp3")
+    playsound("textaudio.mp3")
+import speech_recognition as sr
+import webbrowser
+import wikipedia
+import datetime
+try:
+ speak("welcome dear , i am jarvis , how can i help you")
+except :
+  
+  print("PLEASE CHECK YOUR INTERNET")
+  
+
+def takeCommand():
+    #It takes microphone input from the user and returns string output
+
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("Listening...")
+        r.pause_threshold = 1
+        audio = r.listen(source)
+
+    try:
+        print("Recognizing...")    
+        query = r.recognize_google(audio, language='en-in')
+        print(f"User said: {query}\n")
+
+    except Exception as e:
+        def bolobhaipo(text):
+          audio = gTTS(text)
+          audio.save("olkaudio.mp3")
+          playsound("olkaudio.mp3")
+        bolobhaipo("Say that again please...")  
+        return "None"
+    return query
+
+
+def sendEmail(to, content):
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.ehlo()
+    server.starttls()
+    server.login('youremail@gmail.com', 'your-password')
+    server.sendmail('youremail@gmail.com', to, content)
+    server.close()
+while(True):
+  query = takeCommand().lower()
+  if 'what is the time' in query:
+    def kaho(text):
+      audio = gTTS(text)
+      audio.save("thisaudio.mp3")
+      playsound("thisaudio.mp3")
+    kaho(localtime)
+  if 'about you' in query:
+    def bolo(text):
+      audio = gTTS(text)
+      audio.save("myaudio.mp3")
+      playsound("myaudio.mp3")
+    bolo("i am a voice assistant designed by the professional programmer nishkarsh bains on 22 may 2020 ")
+  if 'youtube' in query:
+    def suno(text):
+      audio = gTTS(text)
+      audio.save("ouraudio.mp3")
+      playsound("ouraudio.mp3")
+    suno("sure dear")
+    webbrowser.open("youtube.com")
+ 
+  elif 'facebook' in query:
+     def bhonkob(text):
+      audio = gTTS(text)
+      audio.save("thsaudio.mp3")
+      playsound("thsaudio.mp3")
+     bhonkob("sure dear")
+     webbrowser.open("facebook.com")
+
+  
+
+  if 'google' in query:
+     def bhonkobddd(text):
+      audio = gTTS(text)
+      audio.save("thvsaudio.mp3")
+      playsound("thsvaudio.mp3")
+      bhonkobddd("sure dear")
+     webbrowser.open("google.com")
+    
+  elif 'who is your best friend' in query:
+     def bhonkot(text):
+      audio = gTTS(text)
+      audio.save("tsaudio.mp3")
+      playsound("tsaudio.mp3")
+     bhonkot("only you are my best friend")
+     
+  
+  '''elif 'song' in query:
+   from pygame import mixer
+   import exit
+   def bhonkop(text):
+      audio = gTTS(text)
+      audio.save("tasaudio.mp3")
+      playsound("tasaudio.mp3")
+   bhonkop("playing sakhiyan by muhinder buttar")
+   print("YOU ONLY HAVE 1 MP3 FILE('DANISH ZEHEN')")
+   #initial = time.time()
+   localtime = time.asctime(time.localtime(time.time()))
+   print("\n", localtime)
+   initial = time.time()  
+   mixer.init()
+   mixer.music.load('C:\\Users\\Simran Bains\\danishzehen.ogg')
+   try :
+     def play():
+       timer = 2 
+       mixer.music.play()
+       timer = 2
+       if timer == 2:
+         play()
+     play()
+   except Exception as a:
+     print("THE SONG IS PLAYING !")
+   print("PRESS 'S' TO STOP THE MUSIC")
+   i = input()
+   if i == "s":
+     mixer.music.stop()
+     print("STOPPED!")
+     print("TIME IN WHICH SONG PLAYED ",initial-time.time())'''
+
+         
+           
+
+
+  elif 'facebook' in query:
+    def bhonko(text):
+      audio = gTTS(text)
+      audio.save("k2audio.mp3")
+      playsound("k2audio.mp3")
+    bhonko("sure dear")
+    print("wait")
+    webbrowser.open("facebook.com")
+
+  elif 'fastest car' in query:
+    def bolobhai(text):
+      audio = gTTS(text)
+      audio.save("opaudio.mp3")
+      playsound("opaudio.mp3")
+    bolobhai("bugatti chiron")
+             
+  elif 'wikipedia' in query:
+    def bolobhaik(text):
+      audio = gTTS(text)
+      audio.save("oaudio.mp3")
+      playsound("oaudio.mp3")
+    
+    bolobhaik('Searching Wikipedia...')
+    query = query.replace("wikipedia", "")
+    results = wikipedia.summary(query, sentences=2)
+    def bolobhaiz(text):
+      audio = gTTS(text)
+      audio.save("paudio.mp3")
+      playsound("paudio.mp3")
+    bolobhaiz("According to Wikipedia")
+    print(results)
+    def bolobhail(text):
+      audio = gTTS(text)
+      audio.save("omaudio.mp3")
+      playsound("omaudio.mp3")
+    bolobhail(results)
+
+  elif 'how are you' in query:
+    def bolobhaix(text):
+      audio = gTTS(text)
+      audio.save("dvaudio.mp3")
+      playsound("dvaudio.mp3")
+    bolobhaix("i am fine like you")
+  elif 'i love you' in query:
+    def bolobhaiq(text):
+      audio = gTTS(text)
+      audio.save("dcaudio.mp3")
+      playsound("dcaudio.mp3")
+    bolobhaiq("but i only love my owner mister nishkarsh")
+  elif 'hindi' in query:
+    def bolobhaif(text):
+      audio = gTTS(text)
+      audio.save("duaudio.mp3")
+      playsound("duaudio.mp3")
+    bolobhaif("no not write now but i will speak it in feature")
+  elif 'a horror story' in query:
+    def bolobhaihk(text):
+      audio = gTTS(text)
+      audio.save("doaudio.mp3")
+      playsound("doaudio.mp3")
+    bolobhaihk("We bought an old house, my boyfriend and I. He's in charge of the new construction – converting the kitchen in to the master bedroom for instance, while I'm on wallpaper removal duty. The previous owner papered EVERY wall and CEILING! Removing it is brutal, but oddly satisfying. The best feeling is getting a long peel, similar to your skin when you're peeling from a sunburn. I don't know about you but I kinda make a game of peeling, on the hunt for the longest piece before it rips.Under a corner section of paper in every room is a person’s name and a date. Curiosity got the best of me one night when I Googled one of the names and discovered the person was actually a missing person, the missing date matching the date under the wallpaper! The next day, I made a list of all the names and dates. Sure enough each name was for a missing person with dates to match. We notified the police who naturally sent out the crime scene team. I overhead one tech say yup, it's human. Human? What's human? Ma'am, where is the material you removed from the walls already? This isn't wallpaper you were removing.")
+  elif 'a game' in query:
+    import pygame
+    import random
+    x = pygame.init()
+    w = 500
+    l = 600
+    gameWindow = pygame.display.set_mode((l,w))
+    pygame.display.set_caption("snake game by nishkarsh")
+    pygame.display.update()
+    white = (255,255,255)
+    black = (25,5,25)
+    green = (245,00,00)
+    exit_game = False
+    game_over = False
+    snake_x = 45
+    font = pygame.font.SysFont(None,55)
+    def text(text,colour,x,y):
+        screen_text = font.render(text,True,colour)
+        gameWindow.blit(screen_text,[x,y])
+    def take(text,colour,x,y):
+        screen_text = font.render(text,True,colour)
+        gameWindow.blit(screen_text,[x,y])
+    snakelist = []
+    snakelength = 1
+    snake_y = 55
+    snake_size = 25
+    velocity_x = 0
+    velocity_y = 0
+    food_x = random.randint(0,600/2)
+    food_y = random.randint(0,500/2)
+    clock = pygame.time.Clock()
+    fps = 300
+    score = 0
+    lambai = []
+    def plot_snake(gameWindow, color, snk_list, snake_size):
+        for x,y in snakelist:
+            pygame.draw.rect(gameWindow, color, [x, y, snake_size, snake_size])
+    #pygame.draw.rect(gameWindow, black, [food_x, food_y, snake_size,snake_size])
+    #creating game loop
+    while not exit_game :
+        if snake_x > l or snake_x<0 or snake_y>l or snake_y<0:
+            gameWindow.fill(white)
+            take("score = " + str(score*10),green,200,200)
+            take("GAME OVER",green,180,250)
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    exit_game = True
+        else:
+              for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    exit_game = True
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_RIGHT:
+                        velocity_x = 1
+                        velocity_y = 0
+                    if event.key == pygame.K_LEFT:
+                        velocity_x = -1
+                        velocity_y = 0
+                    if event.key == pygame.K_UP:
+                        velocity_y = -1
+                        velocity_x = 0
+                    if event.key == pygame.K_DOWN:
+                        velocity_y = 1
+                        velocity_x = 0
+                        snake_y = snake_y + 10
+              snake_x = snake_x + velocity_x
+              snake_y = snake_y + velocity_y
+              if abs(snake_x - food_x)<21 and abs(snake_y - food_y)<21:
+                  score = score+1
+                  snakelength = snakelength + 15
+                  
+                  food_x = random.randint(0,600/2)
+                  food_y = random.randint(0,500/2)
+              gameWindow.fill(white)
+              text("score = " + str(score*10),green,5,5)
+              pygame.draw.rect(gameWindow,green, [food_x, food_y, snake_size,snake_size])
+              pygame.draw.rect(gameWindow, black, [snake_x, snake_y, snake_size,snake_size])
+              head = []
+              head.append(snake_x)
+              head.append(snake_y)
+              snakelist.append(head)
+              plot_snake(gameWindow,black,snakelist,snake_size)
+              if len(snakelist)>snakelength:
+                del snakelist[0]
+        pygame.display.update()
+        clock.tick(fps)
+    pygame.quit()
+    quit()
+
+
+    
+    print("DRAW =",draw)
+    def bolobhaioer(text):
+      audio = gTTS(text)
+      audio.save("ojaudio.mp3")
+      playsound("ojaudio.mp3")
+    if myscore > compscore :
+        bolobhaioer("you won the game")
+    elif myscore < compscore:
+     def bolobhaiorgf(text):
+      audio = gTTS(text)
+      audio.save("ofaudio.mp3")
+      playsound("ofaudio.mp3") 
+     bolobhaiorgf("i won the game")
+    else :
+      def bolobhaioerr(text):
+        audio = gTTS(text)
+        audio.save("opkaudio.mp3")
+        playsound("opkaudio.mp3")
+      bolobhaioerr("the game is tied")
+  elif 'calculator' in query:
+    def bolobhaixed(text):
+      audio = gTTS(text)
+      audio.save("dvcaudio.mp3")
+      playsound("dvcaudio.mp3")
+    bolobhaixed("loading calculator")
+    from tkinter import *
+    root = Tk()
+    root.geometry("400x650")
+    root.maxsize(400,650)
+    root.minsize(400,650)
+    root.wm_iconbitmap("C:/Users/Simran Bains/Pictures/cal.png")
+    root.title("CALCULATOR BY NISHKARSH")
+    fr= Frame(root,bg="blue")
+    fr.pack(side="top",anchor="n")
+    screen = StringVar()
+    scvalue = StringVar()
+    scvalue.set("")
+    screen = Entry(fr,textvar= scvalue ,font="lucida 23 bold",borderwidth=20,relief = SUNKEN)
+    screen.pack()
+    def click(event):
+      global scvalue
+      global text
+      text = event.widget.cget("text")
+      if text == "=" :
+        if scvalue.get().isdigit():
+          value = int(scvalue.get())
+        else:
+          try:
+           value = eval(scvalue.get())
+          except Exception as e:
+           scvalue.set("ERROR::")
+        try:
+         scvalue.set(value)
+        except Exception as e:
+          print("")
+        screen.update()
+      elif text =="C":
+        scvalue.set(" ")
+        screen.update()
+      else:
+        scvalue.set(scvalue.get() + text)
+        screen.update()
+    er = Frame(root,bg ="grey")
+    er.pack(side="top")
+
+    tr = Button(er,text="1",font="lucida 30 bold",fg="blue",padx=10)
+    tr.pack(side=LEFT,padx = 5,pady = 5)
+    tr.bind("<Button-1>",click)
+
+    tq = Button(er,text="2",font="lucida 30 bold",fg="blue",padx=10)
+    tq.pack(side="left",padx = 5,pady = 5)
+    tq.bind("<Button-1>",click)
+
+    ta = Button(er,text="3",font="lucida 30 bold",fg="blue",padx=10)
+    ta.pack(side="left",padx = 5,pady = 5)
+    ta.bind("<Button-1>",click)
+    ey = Frame(root,bg ="grey")
+    ey.pack(side="top")
+    td = Button(ey,text="4",font="lucida 30 bold",fg="blue",padx=10)
+    td.pack(side="left",padx = 4,pady = 5)
+    td.bind("<Button-1>",click)
+
+    tf = Button(ey,text="5",font="lucida 30 bold",fg="blue",padx=10)
+    tf.pack(side="left",padx = 5,pady = 5)
+    tf.bind("<Button-1>",click)
+    th = Button(ey,text="6",font="lucida 30 bold",fg="blue",padx=10)
+    th.pack(side="left",padx = 6,pady = 5)
+    th.bind("<Button-1>",click)
+    eo = Frame(root,bg ="grey")
+    eo.pack(side="top")
+    tn = Button(eo,text="7",font="lucida 30 bold",fg="blue",padx=10)
+    tn.pack(side="left",padx = 7,pady = 5)
+    tn.bind("<Button-1>",click)
+    tf = Button(eo,text="8",font="lucida 30 bold",fg="blue",padx=10)
+    tf.pack(side="left",padx = 5,pady = 5)
+    tf.bind("<Button-1>",click)
+    th = Button(eo,text="9",font="lucida 30 bold",fg="blue",padx=10)
+    th.pack(side="left",padx = 3,pady = 5)
+    th.bind("<Button-1>",click)
+    ez = Frame(root,bg ="grey")
+    ez.pack(side="top")
+    tn = Button(ez,text="*",font="lucida 30 bold",fg="blue",padx=10)
+    tn.pack(side="left",padx = 8,pady = 5)
+    tn.bind("<Button-1>",click)
+    tf = Button(ez,text="+",font="lucida 30 bold",fg="blue",padx=10)
+    tf.pack(side="left",padx = 5,pady = 5)
+    tf.bind("<Button-1>",click)
+    th = Button(ez,text="-",font="lucida 30 bold",fg="blue",padx=10)
+    th.pack(side="left",padx = 9,pady = 5)
+    th.bind("<Button-1>",click)
+    ezzz = Frame(root,bg ="grey")
+    ezzz.pack(side="top")
+    tn = Button(ezzz,text="C",font="lucida 30 bold",fg="blue",padx=4)
+    tn.pack(side="left",padx = 7,pady = 5)
+    tn.bind("<Button-1>",click)
+    tf = Button(ezzz,text="/",font="lucida 30 bold",fg="blue",padx=16)
+    tf.pack(side="left",padx = 5,pady = 5)
+    tf.bind("<Button-1>",click)
+    th = Button(ezzz,text="%",font="lucida 30 bold",fg="blue",padx=1)
+    th.pack(side="left",padx = 9,pady = 5)
+    th.bind("<Button-1>",click)
+    ezz = Frame(root,bg ="grey")
+    ezz.pack(side="top")
+    tw = Button(ezz,text="=",font="lucida 30 bold",fg="blue",padx=27)
+    tw.pack(side="left",padx = 10)
+    tw.bind("<Button-1>",click)
+    tx = Button(ezz,text="0",font="lucida 30 bold",fg="blue",padx=27)
+    tx.pack(side="left",padx = 10)
+    tx.bind("<Button-1>",click)
+
+    root.mainloop()
+  elif 'horror games' in query:
+    def bolobhaiosss(text):
+      audio = gTTS(text)
+      audio.save("sssokaudio.mp3")
+      playsound("sssokaudio.mp3")
+    bolobhaiosss(" first i bloody mary second is baby blue third is charlie charlie fourth is one man hide and seek")
+  elif 'favourite person' in query:
+    def bolobhaiosssl(text):
+      audio = gTTS(text)
+      audio.save("ssslokaudio.mp3")
+      playsound("ssslokaudio.mp3")
+    bolobhaiosssl("danish zehen is my favourite . he is my everything")
+  elif 'hello' in query:
+    def bolobxhaio(text):
+      audio = gTTS(text)
+      audio.save("orkaudio.mp3")
+      playsound("orkaudio.mp3")
+    bolobxhaio("hello dear")
+  elif 'what is,who is' in query:
+    def bolobxhaiokz(text):
+      audio = gTTS(text)
+      audio.save("orkaudio.mp3")
+      playsound("orkaudio.mp3")
+    bolobxhaiokz("searching dear")
+    query = query.replace("wikipedia", "")
+    results = wikipedia.summary(query, sentences=2)
+    def bolobhaizqw(text):
+      audio = gTTS(text)
+      audio.save("peraudio.mp3")
+      playsound("peraudio.mp3")
+    bolobhaizqw("According to Wikipedia")
+    print(results)
+else:
+    def bolobhaio(text):
+      audio = gTTS(text)
+      audio.save("okaudio.mp3")
+      playsound("okaudio.mp3")
+    bolobhaio("this feature will be in next update")
+# WORKING ON UPDATES
